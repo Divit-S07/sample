@@ -1,11 +1,14 @@
 <?php
 $conn = mysqli_connect("localhost", "root", " ", " ");
-$sql = "CREATE DATABASE school";
+$sql = "CREATE TABLE students (
+id INT,
+name VARCHAR(50),
+email VARCHAR(100),
+department VARCHAR(20)
+)";
 if (mysqli_query($conn, $sql)) {
-echo "Database created successfully!";
-}
-else {
-echo "Error creating database: " . mysqli_error($conn);
-}
+echo "Table created successfully!";
+} else {
+echo "Error: " . mysqli_error($conn);
 mysqli_close($conn);
 ?>
