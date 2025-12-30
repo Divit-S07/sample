@@ -1,9 +1,11 @@
 <?php
 $conn = mysqli_connect("localhost", "root", " ", " ");
-$sql = "SELECT * FROM students";
-$result = mysqli_query($conn, $sql);
-while ($row = mysqli_fetch_assoc($result)) {
-echo $row['id'] . " - " . $row['name'] . " - " . $row['email'] . "<br>";
+$sql = "UPDATE students SET email='newmail@gmail.com' WHERE id=1";
+if (mysqli_query($conn, $sql)) {
+echo "Record updated!";
+} else {
+echo "Error: " . mysqli_error($conn);
+
 }
 mysqli_close($conn);
 ?>
