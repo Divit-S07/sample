@@ -1,11 +1,10 @@
 <?php
 $conn = mysqli_connect("localhost", "root", " ", " ");
-$sql = "UPDATE students SET email='newmail@gmail.com' WHERE id=1";
+$sql = "DELETE FROM students WHERE id=1";
 if (mysqli_query($conn, $sql)) {
-echo "Record updated!";
+echo "Record deleted!";
 } else {
 echo "Error: " . mysqli_error($conn);
-
 }
 mysqli_close($conn);
 ?>
